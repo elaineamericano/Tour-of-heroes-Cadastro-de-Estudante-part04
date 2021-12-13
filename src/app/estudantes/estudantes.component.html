@@ -1,0 +1,11 @@
+<h2>Meus Alunos</h2>
+
+<ul class="estudantes">
+  <li *ngFor="let estudante of estudantes"
+    [class.selected]="estudante === selectedEstudante"
+    (click)="onSelect(estudante)">
+    <span class="badge">{{estudante.id}}</span> {{estudante.name}}
+  </li>
+</ul>
+
+<app-estudante-detail [estudante]="selectedEstudante"></app-estudante-detail>
